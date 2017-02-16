@@ -19,7 +19,7 @@
             <asp:CheckBox ID="RememberMe" runat="server" text="Remember Me" /></p>
 
         <p>
-            <asp:Button ID="LoginButton" runat="server" Text="Login" /></p>
+            <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" /></p>
 
         <p>
             <asp:Label ID="InvalidCredentialsMessage" runat="server" ForeColor="Red" Text="Your username or password is invalid. Please try again." Visible="False"></asp:Label></p>
