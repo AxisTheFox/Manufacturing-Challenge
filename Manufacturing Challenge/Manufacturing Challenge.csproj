@@ -110,6 +110,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Styles\LoginStyle.css" />
+    <Content Include="Styles\Master.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

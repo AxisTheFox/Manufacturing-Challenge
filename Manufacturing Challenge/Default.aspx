@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <h2>
     <asp:LoginView ID="LoginView" runat="server">
         <AnonymousTemplate>
             Log in, or sign up!
@@ -10,4 +11,5 @@
             Welcome back!
         </LoggedInTemplate>
     </asp:LoginView>
+    </h2>
 </asp:Content>
