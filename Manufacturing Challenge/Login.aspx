@@ -22,6 +22,6 @@
             <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" /></p>
 
         <p>
-            <asp:Label ID="InvalidCredentialsMessage" runat="server" ForeColor="Red" Text="Your username or password is invalid. Please try again." Visible="False"></asp:Label></p>
+            <asp:Label ID="LoginFailedMessage" runat="server" ForeColor="Red" Text="Your username or password is invalid. Please try again." Visible="False"></asp:Label></p>
     </div>
 </asp:Content>
