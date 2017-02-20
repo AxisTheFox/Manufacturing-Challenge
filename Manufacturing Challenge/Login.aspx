@@ -9,19 +9,16 @@
 
         <p>
             Email:
-            <asp:TextBox ID="Email" runat="server"></asp:TextBox></p>
+            <asp:TextBox ID="Email" runat="server" TextMode="Email"></asp:TextBox></p>
 
         <p>
             Password:
             <asp:TextBox ID="Password" runat="server" TextMode="Password"></asp:TextBox></p>
 
         <p>
-            <asp:CheckBox ID="RememberMe" runat="server" text="Remember Me" /></p>
-
-        <p>
             <asp:Button ID="LoginButton" runat="server" Text="Login" OnClick="LoginButton_Click" /></p>
 
         <p>
-            <asp:Label ID="LoginFailedMessage" runat="server" ForeColor="Red" Text="Your username or password is invalid. Please try again." Visible="False"></asp:Label></p>
+            <asp:Label ID="LoginFailedMessage" runat="server" ForeColor="Red" Text=""></asp:Label></p>
     </div>
 </asp:Content>
