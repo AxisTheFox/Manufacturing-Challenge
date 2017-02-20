@@ -19,13 +19,18 @@ namespace Manufacturing_Challenge
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            if (Email.Text != "" && Password.Text != "")
+            if (NoEmptyFieldsExist())
             {
-                attemptLogin();
+                AttemptLogin();
             }
         }
 
-        private void attemptLogin()
+        private Boolean NoEmptyFieldsExist()
+        {
+            return Email.Text != "" && Password.Text != "";
+        }
+
+        private void AttemptLogin()
         {
             try
             {
