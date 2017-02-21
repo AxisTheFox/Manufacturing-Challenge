@@ -5,7 +5,8 @@
 <html>
 <head runat="server">
     <title>Manufacturing Challenge</title>
-    <link href="Styles/Master.css" type="text/css" rel="stylesheet" />
+    <link href="~/Styles/Master.css" type="text/css" rel="stylesheet" />
+    <link href='//fonts.googleapis.com/css?family=Armata' rel='stylesheet' runat="server" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -17,11 +18,9 @@
         <div id="nav">
             <ul>
                 <li>
-                    <asp:HyperLink ID="HomeLink" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>
+                    <asp:HyperLink ID="homeLink" runat="server" NavigateUrl="~/Default.aspx">Home</asp:HyperLink></li>
                 <li>
-                    <asp:HyperLink ID="PlayLink" runat="server" NavigateUrl="~/MemberPages/Play.aspx">Play</asp:HyperLink></li>
-                <li>
-                    <asp:LoginStatus ID="LoginStatus" runat="server" /></li>
+                    <asp:HyperLink ID="playLink" runat="server" NavigateUrl="~/MemberPages/Play.aspx">Play</asp:HyperLink></li>
             </ul>
         </div>
 

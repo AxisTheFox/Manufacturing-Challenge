@@ -13,6 +13,7 @@ namespace Manufacturing_Challenge
     public partial class Login : System.Web.UI.Page
     {
         string passwordFromDatabase = "";
+        string userFirstName = "";
         int userId = 0;
 
         protected void Page_Load(object sender, EventArgs e)
@@ -55,7 +56,8 @@ namespace Manufacturing_Challenge
             ObtainPasswordFromDatabaseUsingEmail();
             if (passwordFromUser.Equals(passwordFromDatabase))
             {
-                Session["UserId"] = userId;
+                Session["userId"] = userId;
+                Session["userFirstName"] = userFirstName;
                 Response.Redirect("Default.aspx");
             }
             else
@@ -67,7 +69,7 @@ namespace Manufacturing_Challenge
         private void ObtainPasswordFromDatabaseUsingEmail()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
-            string qry = "SELECT ID, Password FROM [User] WHERE Email=@e;";
+            string qry = "SELECT ID, Password, FirstName FROM [User] WHERE Email=@e;";
             SqlCommand cmd = new SqlCommand(qry, conn);
             cmd.Parameters.AddWithValue("@e", Email.Text);
             conn.Open();
@@ -83,6 +85,7 @@ namespace Manufacturing_Challenge
             {
                 passwordFromDatabase = rdr["Password"].ToString();
                 userId = Int32.Parse(rdr["ID"].ToString());
+                userFirstName = rdr["FirstName"].ToString();
             }
         }
 
