@@ -7,12 +7,14 @@ using System.Web.UI.WebControls;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Data;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Manufacturing_Challenge
 {
     public partial class Login : System.Web.UI.Page
     {
-        string passwordFromDatabase = "";
+        string hashedPasswordFromDatabase = "";
         string userFirstName = "";
         int userId = 0;
 
@@ -52,9 +54,9 @@ namespace Manufacturing_Challenge
 
         private void AttemptUserLogin()
         {
-            string passwordFromUser = Password.Text;
+            string hashedPasswordFromUser = hashUserPassword(Password.Text);
             ObtainPasswordFromDatabaseUsingEmail();
-            if (passwordFromUser.Equals(passwordFromDatabase))
+            if (hashedPasswordFromUser.Equals(hashedPasswordFromDatabase))
             {
                 Session["userId"] = userId;
                 Session["userFirstName"] = userFirstName;
@@ -64,6 +66,19 @@ namespace Manufacturing_Challenge
             {
                 ShowInvalidLoginMessage();
             }
+        }
+
+        private string hashUserPassword(string passwordFromUser)
+        {
+            SHA1CryptoServiceProvider sha1Service = new SHA1CryptoServiceProvider();
+            sha1Service.ComputeHash(ASCIIEncoding.ASCII.GetBytes(passwordFromUser));
+            byte[] result = sha1Service.Hash;
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+            return strBuilder.ToString();
         }
 
         private void ObtainPasswordFromDatabaseUsingEmail()
@@ -83,7 +98,7 @@ namespace Manufacturing_Challenge
         {
             while (rdr.Read())
             {
-                passwordFromDatabase = rdr["Password"].ToString();
+                hashedPasswordFromDatabase = rdr["Password"].ToString();
                 userId = Int32.Parse(rdr["ID"].ToString());
                 userFirstName = rdr["FirstName"].ToString();
             }

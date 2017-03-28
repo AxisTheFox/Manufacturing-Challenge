@@ -96,6 +96,7 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="MemberPages\Admin.aspx" />
     <Content Include="MemberPages\Play.aspx" />
     <Content Include="MemberPages\Scenario.aspx" />
     <Content Include="packages.config" />
@@ -129,6 +130,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPages\Admin.aspx.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPages\Admin.aspx.designer.cs">
+      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MemberPages\Play.aspx.cs">
       <DependentUpon>Play.aspx</DependentUpon>
