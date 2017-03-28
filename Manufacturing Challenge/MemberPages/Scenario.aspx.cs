@@ -62,20 +62,42 @@ namespace Manufacturing_Challenge.MemberPages
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string answer = rblSolutions.SelectedValue;
-                SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
-                conn.Open();
-                string qry = "select * from [Solution] where ID = " + answer;
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                gvDisplay.DataSource = dt;
-                gvDisplay.DataBind();
-            }
-            catch { }
+            goBackButton.Visible = true;
+            btnSubmit.Visible = false;
+
+            string answer = rblSolutions.SelectedValue;
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
+            conn.Open();
+            string qry = "select * from [Solution] where ID = " + answer;
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            gvDisplay.DataSource = dt;
+            gvDisplay.DataBind();
+
+            pushAssetChanges(dt);
+        }
+
+        private void pushAssetChanges(DataTable dt)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
+            conn.Open();
+            string qry = "Update Users set assetMoney";
+        }
+
+        protected void goBackButton_Click(object sender, EventArgs e)
+        {
+            updateStation();
+            Response.Redirect("Play.aspx");
+        }
+
+        public void updateStation()
+        {
+            //get current station from user
+            //if station = ""
+            //next station = ""
+            //We should use numbers instead of station names so that we can simply add 1 to update next station.
         }
     }
 }

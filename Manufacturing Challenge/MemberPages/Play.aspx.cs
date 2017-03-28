@@ -19,21 +19,18 @@ namespace Manufacturing_Challenge.MemberPages
                 userId = (int)Session["userId"];
                 if (!IsPostBack)
                 {
-                    updateStation();
+                    //Do stuff? Like show board maybe?
                 }
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 
-        public void updateStation()
-        {
-            //get current station from user
-            //if station = ""
-            //next station = ""
-            //We should use numbers instead of station names so that we can simply add 1 to update next station.
-        }
         protected void btnAnswerScenario_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Scenario.aspx");
+            Response.Redirect("Scenario.aspx");
         }
     }
 }

@@ -9,4 +9,5 @@
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
     <asp:GridView ID="gvDisplay" runat="server">
     </asp:GridView>
+    <asp:Button ID="goBackButton" runat="server" Text="Go back to board" OnClick="goBackButton_Click" Visible="False" />
 </asp:Content>

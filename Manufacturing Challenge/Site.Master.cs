@@ -11,7 +11,14 @@ namespace Manufacturing_Challenge
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["userId"] != null)
+            {
+                playLink.Visible = true;
+            }
+            else
+            {
+                playLink.Visible = false;
+            }
         }
     }
 }
