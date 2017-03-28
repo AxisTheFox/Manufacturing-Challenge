@@ -97,6 +97,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="MemberPages\Play.aspx" />
+    <Content Include="MemberPages\Scenario.aspx" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -135,6 +136,13 @@
     </Compile>
     <Compile Include="MemberPages\Play.aspx.designer.cs">
       <DependentUpon>Play.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPages\Scenario.aspx.cs">
+      <DependentUpon>Scenario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MemberPages\Scenario.aspx.designer.cs">
+      <DependentUpon>Scenario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

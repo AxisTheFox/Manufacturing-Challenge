@@ -3,4 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Page for the main game.</h2>
+    <p>
+        <asp:Button ID="btnAnswerScenario" runat="server" Text="Answer Scenario" OnClick="btnAnswerScenario_Click" />
+    </p>
 </asp:Content>
