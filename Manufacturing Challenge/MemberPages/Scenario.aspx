@@ -7,6 +7,7 @@
     <asp:RadioButtonList ID="rblSolutions" runat="server">
     </asp:RadioButtonList>
     <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="btnSubmit_Click" />
+    <asp:Label ID="errorLabel" runat="server" Text="error" Visible="False"></asp:Label>
     <asp:GridView ID="gvDisplay" runat="server">
     </asp:GridView>
     <asp:Button ID="goBackButton" runat="server" Text="Go back to board" OnClick="goBackButton_Click" Visible="False" />
