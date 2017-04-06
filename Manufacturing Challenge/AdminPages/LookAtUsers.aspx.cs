@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Manufacturing_Challenge.AdminPages
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class LookAtUsers : System.Web.UI.Page
     {
         int userId;
         protected void Page_Load(object sender, EventArgs e)
@@ -24,19 +24,6 @@ namespace Manufacturing_Challenge.AdminPages
             {
                 Response.Redirect("/Login.aspx");
             }
-        }
-
-        protected void lookAtUsersButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("LookAtUsers.aspx");
-        }
-        protected void addScenarioButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddScenario.aspx");
-        }
-        protected void deleteScenarioButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("DeleteScenario.aspx");
         }
     }
 }

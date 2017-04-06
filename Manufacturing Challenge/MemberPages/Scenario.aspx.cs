@@ -12,18 +12,30 @@ namespace Manufacturing_Challenge.MemberPages
 {
     public partial class Scenario : System.Web.UI.Page
     {
+        /*There is a SLIGHT possibility that a player could be presented with a scenario,
+         then an admin DELETES that scenario and its associated solutions before the player
+         picks a solution. This would break the game. All the data about the solutions
+         should be saved AT LOAD TIME and called later. But that's hard.
+         */
         int userId;
+
         Int64 scenarioId;
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            userId = (int)(Session["userID"]);
-
-            if (!IsPostBack)
+            if (Session["userId"] != null)
             {
-                getScenario();
-                getSolutions();
+                userId = (int)Session["userId"];
+                if (!IsPostBack)
+                {
+                    getScenario();
+                    getSolutions();
+                }
+            }
+            else
+            {
+                Response.Redirect("/Login.aspx");
             }
         }
 
@@ -76,13 +88,13 @@ namespace Manufacturing_Challenge.MemberPages
                 updateAsset("Parts", answer);
                 updateAsset("Employees", answer);
                 updateAsset("Customers", answer);
-            }
 
-            //shows User stats
-            conn.Open();
-            string qry = "select * from [User] where ID = " + userId;
-            SqlCommand cmd = new SqlCommand(qry, conn);
-            showGridView(cmd);
+                //shows User stats
+                conn.Open();
+                string qry = "select * from [User] where ID = " + userId;
+                SqlCommand cmd = new SqlCommand(qry, conn);
+                showGridView(cmd);
+            }
         }
         private void updateAsset(string field, string answer)
         {

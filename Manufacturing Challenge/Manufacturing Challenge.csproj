@@ -94,10 +94,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPages\AddScenario.aspx" />
     <Content Include="AdminPages\Admin.aspx" />
+    <Content Include="AdminPages\DeleteScenario.aspx" />
+    <Content Include="AdminPages\LookAtUsers.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="MemberPages\Admin.aspx" />
     <Content Include="MemberPages\Play.aspx" />
     <Content Include="MemberPages\Scenario.aspx" />
     <Content Include="packages.config" />
@@ -118,12 +120,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\AddScenario.aspx.cs">
+      <DependentUpon>AddScenario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\AddScenario.aspx.designer.cs">
+      <DependentUpon>AddScenario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\Admin.aspx.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPages\Admin.aspx.designer.cs">
       <DependentUpon>Admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\DeleteScenario.aspx.cs">
+      <DependentUpon>DeleteScenario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\DeleteScenario.aspx.designer.cs">
+      <DependentUpon>DeleteScenario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\LookAtUsers.aspx.cs">
+      <DependentUpon>LookAtUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\LookAtUsers.aspx.designer.cs">
+      <DependentUpon>LookAtUsers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -138,13 +161,6 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MemberPages\Admin.aspx.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MemberPages\Admin.aspx.designer.cs">
-      <DependentUpon>Admin.aspx</DependentUpon>
     </Compile>
     <Compile Include="MemberPages\Play.aspx.cs">
       <DependentUpon>Play.aspx</DependentUpon>

@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Manufacturing_Challenge.AdminPages
 {
-    public partial class Admin : System.Web.UI.Page
+    public partial class AddScenarios : System.Web.UI.Page
     {
         int userId;
         protected void Page_Load(object sender, EventArgs e)
@@ -26,17 +26,9 @@ namespace Manufacturing_Challenge.AdminPages
             }
         }
 
-        protected void lookAtUsersButton_Click(object sender, EventArgs e)
+        protected void submitButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("LookAtUsers.aspx");
-        }
-        protected void addScenarioButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("AddScenario.aspx");
-        }
-        protected void deleteScenarioButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("DeleteScenario.aspx");
+            //Get all the stuff above and insert into db.
         }
     }
 }

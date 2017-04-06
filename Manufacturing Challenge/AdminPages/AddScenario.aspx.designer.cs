@@ -10,33 +10,42 @@
 namespace Manufacturing_Challenge.AdminPages {
     
     
-    public partial class Admin {
+    public partial class AddScenarios {
         
         /// <summary>
-        /// lookAtUsersButton control.
+        /// stationDdl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button lookAtUsersButton;
+        protected global::System.Web.UI.WebControls.DropDownList stationDdl;
         
         /// <summary>
-        /// addScenarioButton control.
+        /// scenarioTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button addScenarioButton;
+        protected global::System.Web.UI.WebControls.TextBox scenarioTextBox;
         
         /// <summary>
-        /// deleteScenarioButton control.
+        /// TextBox1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button deleteScenarioButton;
+        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        
+        /// <summary>
+        /// submitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button submitButton;
     }
 }
