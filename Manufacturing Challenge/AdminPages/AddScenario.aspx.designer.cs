@@ -22,22 +22,274 @@ namespace Manufacturing_Challenge.AdminPages {
         protected global::System.Web.UI.WebControls.DropDownList stationDdl;
         
         /// <summary>
-        /// scenarioTextBox control.
+        /// scenarioPromptTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox scenarioTextBox;
+        protected global::System.Web.UI.WebControls.TextBox scenarioPromptTextBox;
         
         /// <summary>
-        /// TextBox1 control.
+        /// scenarioResultsTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox scenarioResultsTextBox;
+        
+        /// <summary>
+        /// SolutionOneTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionOneTextBox;
+        
+        /// <summary>
+        /// SolutionOneCorrectCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox SolutionOneCorrectCheckBox;
+        
+        /// <summary>
+        /// SolutionOneMoneyTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionOneMoneyTextBox;
+        
+        /// <summary>
+        /// SolutionOneProductsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionOneProductsTextBox;
+        
+        /// <summary>
+        /// SolutionOnePartsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionOnePartsTextBox;
+        
+        /// <summary>
+        /// SolutionOneEmployeesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionOneEmployeesTextBox;
+        
+        /// <summary>
+        /// SolutionOneCustomersTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionOneCustomersTextBox;
+        
+        /// <summary>
+        /// SolutionTwoTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionTwoTextBox;
+        
+        /// <summary>
+        /// SolutionTwoCorrectCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox SolutionTwoCorrectCheckBox;
+        
+        /// <summary>
+        /// SolutionTwoMoneyTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionTwoMoneyTextBox;
+        
+        /// <summary>
+        /// SolutionTwoProductsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionTwoProductsTextBox;
+        
+        /// <summary>
+        /// SolutionTwoPartsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionTwoPartsTextBox;
+        
+        /// <summary>
+        /// SolutionTwoEmployeesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionTwoEmployeesTextBox;
+        
+        /// <summary>
+        /// SolutionTwoCustomersTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionTwoCustomersTextBox;
+        
+        /// <summary>
+        /// SolutionThreeTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionThreeTextBox;
+        
+        /// <summary>
+        /// SolutionThreeCorrectCheckBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox SolutionThreeCorrectCheckBox;
+        
+        /// <summary>
+        /// SolutionThreeMoneyTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionThreeMoneyTextBox;
+        
+        /// <summary>
+        /// SolutionThreeProductsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionThreeProductsTextBox;
+        
+        /// <summary>
+        /// SolutionThreePartsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionThreePartsTextBox;
+        
+        /// <summary>
+        /// SolutionThreeEmployeesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionThreeEmployeesTextBox;
+        
+        /// <summary>
+        /// SolutionThreeCustomersTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionThreeCustomersTextBox;
+        
+        /// <summary>
+        /// SolutionFourTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionFourTextBox;
+        
+        /// <summary>
+        /// SolutionFourCorrectCheckBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox SolutionFourCorrectCheckBox1;
+        
+        /// <summary>
+        /// SolutionFourMoneyTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionFourMoneyTextBox;
+        
+        /// <summary>
+        /// SolutionFourProductsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionFourProductsTextBox;
+        
+        /// <summary>
+        /// SolutionFourPartsTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionFourPartsTextBox;
+        
+        /// <summary>
+        /// SolutionFourEmployeesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionFourEmployeesTextBox;
+        
+        /// <summary>
+        /// SolutionFourCustomersTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox SolutionFourCustomersTextBox;
         
         /// <summary>
         /// submitButton control.
@@ -47,5 +299,14 @@ namespace Manufacturing_Challenge.AdminPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button submitButton;
+        
+        /// <summary>
+        /// Label1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
     }
 }
