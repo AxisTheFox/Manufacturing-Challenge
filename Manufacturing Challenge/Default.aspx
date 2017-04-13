@@ -16,6 +16,6 @@
         <br />
         <br />
         <asp:Label ID="signupLabel" runat="server" Text="New here? " Visible="false"></asp:Label>
-        <asp:HyperLink ID="signupLink" runat="server" Text="Sign up now!" Visible="false"></asp:HyperLink>
+        <asp:HyperLink ID="signupLink" runat="server" Text="Sign up now!" NavigateUrl="~/Signup.aspx" Visible="false"></asp:HyperLink>
     </h2>
 </asp:Content>

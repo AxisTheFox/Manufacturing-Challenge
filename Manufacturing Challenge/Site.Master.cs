@@ -24,6 +24,7 @@ namespace Manufacturing_Challenge
             }
             else
             {
+                adminLink.Visible = false;
                 playLink.Visible = false;
             }
         }
