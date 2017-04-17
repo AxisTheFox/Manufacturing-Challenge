@@ -94,6 +94,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="AdminPages\AddScenario.aspx" />
     <Content Include="AdminPages\Admin.aspx" />
     <Content Include="AdminPages\DeleteScenario.aspx" />
@@ -121,6 +122,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\AddScenario.aspx.cs">
       <DependentUpon>AddScenario.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

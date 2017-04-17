@@ -22,7 +22,10 @@
                     <li>
                         <asp:HyperLink ID="playLink" runat="server" NavigateUrl="~/MemberPages/Play.aspx">Play</asp:HyperLink></li>
                     <li>
-                        <asp:HyperLink ID="adminLink" runat="server" NavigateUrl="~/AdminPages/Admin.aspx">Administrator Powers</asp:HyperLink></li>
+                        <asp:HyperLink ID="aboutLink" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink></li>
+                    <li>
+                        <asp:HyperLink ID="adminLink" runat="server" NavigateUrl="~/AdminPages/Admin.aspx">Administrator</asp:HyperLink></li>
+
                 </ul>
             </div>
 

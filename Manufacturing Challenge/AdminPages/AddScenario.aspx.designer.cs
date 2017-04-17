@@ -238,13 +238,13 @@ namespace Manufacturing_Challenge.AdminPages {
         protected global::System.Web.UI.WebControls.TextBox SolutionFourTextBox;
         
         /// <summary>
-        /// SolutionFourCorrectCheckBox1 control.
+        /// SolutionFourCorrectCheckBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox SolutionFourCorrectCheckBox1;
+        protected global::System.Web.UI.WebControls.CheckBox SolutionFourCorrectCheckBox;
         
         /// <summary>
         /// SolutionFourMoneyTextBox control.

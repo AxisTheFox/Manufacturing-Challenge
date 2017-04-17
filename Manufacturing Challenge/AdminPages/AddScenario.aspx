@@ -139,7 +139,7 @@
     </p>
 
     Correct Solution:
-        <asp:CheckBox ID="SolutionFourCorrectCheckBox1" runat="server" />
+        <asp:CheckBox ID="SolutionFourCorrectCheckBox" runat="server" />
     <p>
         Impact on Player&#39;s Money:
         <asp:TextBox ID="SolutionFourMoneyTextBox" runat="server"></asp:TextBox>
