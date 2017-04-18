@@ -19,13 +19,13 @@ namespace Manufacturing_Challenge
 
         protected void signupButton_Click(object sender, EventArgs e)
         {
-            if (NoEmptyFieldsExist())
+            if (NoRequiredFieldsAreEmpty())
                 AttemptSignup();
             else
-                ShowEmptyFieldsMessage();
+                ShowEmptyRequiredFieldsMessage();
         }
 
-        private bool NoEmptyFieldsExist()
+        private bool NoRequiredFieldsAreEmpty()
         {
             return emailTextBox.Text != "" && firstNameTextBox.Text != "" && lastNameTextBox.Text != "" && passwordTextBox.Text != "" && confirmPasswordTextBox.Text != "";
         }
@@ -34,8 +34,9 @@ namespace Manufacturing_Challenge
         {
             if (AccountWithEmailAlreadyExists())
                 ShowAccountAlreadyExistsMessage();
-            VerifyPasswordFieldsMatch();
-            SubmitUserInformationToDatabase();
+            else
+                VerifyPasswordFieldsMatch();
+                SubmitUserInformationToDatabase();
         }
 
         private void VerifyPasswordFieldsMatch()
@@ -51,13 +52,19 @@ namespace Manufacturing_Challenge
 
         private bool AccountWithEmailAlreadyExists()
         {
-            return EmailExistsInDatabase();
+            return EmailAlreadyExistsInDatabase();
         }
 
-        private bool EmailExistsInDatabase()
+        private bool EmailAlreadyExistsInDatabase()
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
-            // TODO: check database for emails that match the email input by the user.
+            string qry = "SELECT 'True' FROM [User] WHERE Email=@e";
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            cmd.Parameters.AddWithValue("e", emailTextBox.Text);
+            conn.Open();
+            object queryReturnValue = cmd.ExecuteScalar();
+            conn.Close();
+            return queryReturnValue != null;
         }
 
         private void SubmitUserInformationToDatabase()
@@ -65,7 +72,7 @@ namespace Manufacturing_Challenge
 
         }
 
-        private void ShowEmptyFieldsMessage()
+        private void ShowEmptyRequiredFieldsMessage()
         {
             signupFailedMessage.Text = "You left out some information we need to create your account.";
         }
