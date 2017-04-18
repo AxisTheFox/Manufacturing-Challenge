@@ -4,14 +4,21 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <p>
-        Add New Scenario
+        Add New Scenario</p>
+    <p>
+        <asp:Label ID="errorLabel" runat="server" Text="You left out some information that we need to submit the new scenario." Visible="False" ForeColor="Red"></asp:Label>
     </p>
     <p>
         Station:
         <asp:DropDownList ID="stationDdl" runat="server">
-            <asp:ListItem Value="0">StationName0</asp:ListItem>
-            <asp:ListItem Value="1">StationName1</asp:ListItem>
-            <asp:ListItem Value="2">etc</asp:ListItem>
+            <asp:ListItem Value="0">Warehouse</asp:ListItem>
+            <asp:ListItem Value="1">Shipping</asp:ListItem>
+            <asp:ListItem Value="2">Procurement</asp:ListItem>
+            <asp:ListItem Value="4">Design and Engineering</asp:ListItem>
+            <asp:ListItem Value="5">Sales</asp:ListItem>
+            <asp:ListItem Value="6">Shop Floor</asp:ListItem>
+            <asp:ListItem Value="6">Asset Management</asp:ListItem>
+            <asp:ListItem Value="7">Workforce</asp:ListItem>
         </asp:DropDownList>
     </p>
     <p>
@@ -165,7 +172,6 @@
     </p>
     <p>
         <asp:Button ID="submitButton" runat="server" Text="Submit" OnClick="submitButton_Click" />
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </p>
     <script type="text/javascript">
         function Check(textBox, maxLength) {

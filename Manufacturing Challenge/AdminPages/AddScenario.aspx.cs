@@ -33,8 +33,20 @@ namespace Manufacturing_Challenge.AdminPages
 
         protected void submitButton_Click(object sender, EventArgs e)
         {
+            errorLabel.Visible = false;
+            if (NoEmptyFieldsExist())
+            {
+                AttemptSubmit();
+            }
+            else
+            {
+                ShowEmptyFieldsMessage();
+            }
+        }
+
+        private void AttemptSubmit()
+        {
             string scenarioId = (getMaxScenarioId() + 1).ToString();
-            Label1.Text = scenarioId;
             insertScenario(stationDdl.SelectedValue, scenarioId, scenarioPromptTextBox.Text, scenarioResultsTextBox.Text);
             insertSolution(scenarioId, SolutionOneTextBox.Text, SolutionOneCorrectCheckBox.Checked, SolutionOneMoneyTextBox.Text, SolutionOneProductsTextBox.Text, SolutionOnePartsTextBox.Text, SolutionOneEmployeesTextBox.Text, SolutionOneCustomersTextBox.Text);
             insertSolution(scenarioId, SolutionTwoTextBox.Text, SolutionTwoCorrectCheckBox.Checked, SolutionTwoMoneyTextBox.Text, SolutionTwoProductsTextBox.Text, SolutionTwoPartsTextBox.Text, SolutionTwoEmployeesTextBox.Text, SolutionTwoCustomersTextBox.Text);
@@ -80,6 +92,18 @@ namespace Manufacturing_Challenge.AdminPages
             int maxId = Convert.ToInt32(cmd.ExecuteScalar());
             conn.Close();
             return maxId;
+        }
+        private Boolean NoEmptyFieldsExist()
+        {
+            return scenarioPromptTextBox.Text != "" && scenarioResultsTextBox.Text != ""
+                && SolutionOneTextBox.Text != "" && SolutionOneMoneyTextBox.Text != "" && SolutionOneProductsTextBox.Text != "" && SolutionOnePartsTextBox.Text != "" && SolutionOneEmployeesTextBox.Text != "" && SolutionOneCustomersTextBox.Text != ""
+                && SolutionTwoTextBox.Text != "" && SolutionTwoMoneyTextBox.Text != "" && SolutionTwoProductsTextBox.Text != "" && SolutionTwoPartsTextBox.Text != "" && SolutionTwoEmployeesTextBox.Text != "" && SolutionTwoCustomersTextBox.Text != ""
+                && SolutionThreeTextBox.Text != "" && SolutionThreeMoneyTextBox.Text != "" && SolutionThreeProductsTextBox.Text != "" && SolutionThreePartsTextBox.Text != "" && SolutionThreeEmployeesTextBox.Text != "" && SolutionThreeCustomersTextBox.Text != ""
+                && SolutionFourTextBox.Text != "" && SolutionFourMoneyTextBox.Text != "" && SolutionFourProductsTextBox.Text != "" && SolutionFourPartsTextBox.Text != "" && SolutionFourEmployeesTextBox.Text != "" && SolutionFourCustomersTextBox.Text != "";
+        }
+        private void ShowEmptyFieldsMessage()
+        {
+            errorLabel.Visible = true;
         }
     }
 }

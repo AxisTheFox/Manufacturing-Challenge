@@ -18,8 +18,8 @@ namespace Manufacturing_Challenge.MemberPages
          should be saved AT LOAD TIME and called later. But that's hard.
          */
         int userId;
-
-        Int64 scenarioId;
+        int scenarioId;
+        int station;
         SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
 
         protected void Page_Load(object sender, EventArgs e)
@@ -27,6 +27,7 @@ namespace Manufacturing_Challenge.MemberPages
             if (Session["userId"] != null)
             {
                 userId = (int)Session["userId"];
+                station = (int)Session["userStation"];
                 if (!IsPostBack)
                 {
                     getScenario();
@@ -42,15 +43,15 @@ namespace Manufacturing_Challenge.MemberPages
         public void getScenario()
         {
             conn.Open();
-            string qry = "select * from [Scenario] where Station in (select CurrentStation from [User] where ID = " + userId + ")";
+            string qry = "select * from [Scenario] where Station = " + station;
             SqlCommand cmd = new SqlCommand(qry, conn);
-            SqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                string scenarioText = rdr["PromptText"].ToString();
-                scenarioId = int.Parse(rdr["id"].ToString());
-                lblScenarioText.Text = scenarioText;
-            }
+            DataTable dt = new DataTable();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            Random rng = new Random();
+            var tableRow = dt.Rows[rng.Next(0, dt.Rows.Count)];
+            lblScenarioText.Text = tableRow.Field<string>("PromptText");
+            scenarioId = (int)tableRow.Field<Int64>("id");
             conn.Close();
         }
 
@@ -146,6 +147,7 @@ namespace Manufacturing_Challenge.MemberPages
 
         public void updateStation()
         {
+            //int nextStation = station + 1 % 8;
             //get current station from user
             //if station = ""
             //next station = ""
