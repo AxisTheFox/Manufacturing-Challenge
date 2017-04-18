@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -34,15 +36,21 @@ namespace Manufacturing_Challenge
         {
             if (AccountWithEmailAlreadyExists())
                 ShowAccountAlreadyExistsMessage();
-            else
-                VerifyPasswordFieldsMatch();
+            else if (passwordFieldsMatch())
                 SubmitUserInformationToDatabase();
         }
 
-        private void VerifyPasswordFieldsMatch()
+        private bool passwordFieldsMatch()
         {
             if (!PasswordFieldsMatch())
+            {
                 ShowPasswordMismatchMessage();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private bool PasswordFieldsMatch()
@@ -69,7 +77,55 @@ namespace Manufacturing_Challenge
 
         private void SubmitUserInformationToDatabase()
         {
+            string hashedPassword = hashUserPassword();
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
+            string qry = "INSERT INTO [User] VALUES (@email, @fname, @lname, @pass, @co, @pos, @phone, @city, @state, @country)";
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            addParametersToSqlCommand(hashedPassword, cmd);
+            conn.Open();
+            int result = cmd.ExecuteNonQuery();
+            conn.Close();
+            if (result != 1)
+                ShowSignupErrorMessage();
+        }
 
+        private string hashUserPassword()
+        {
+            SHA1CryptoServiceProvider sha1Service = new SHA1CryptoServiceProvider();
+            sha1Service.ComputeHash(ASCIIEncoding.ASCII.GetBytes(passwordTextBox.Text));
+            byte[] result = sha1Service.Hash;
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+            return strBuilder.ToString();
+        }
+
+        private void addParametersToSqlCommand(string hashedPassword, SqlCommand cmd)
+        {
+            parameterizeRequiredFields(hashedPassword, cmd);
+            parameterizeOptionalFields(cmd);
+        }
+
+        private void parameterizeRequiredFields(string hashedPassword, SqlCommand cmd)
+        {
+            cmd.Parameters.AddWithValue("@email", emailTextBox.Text);
+            cmd.Parameters.AddWithValue("@fname", firstNameTextBox.Text);
+            cmd.Parameters.AddWithValue("@lname", lastNameTextBox.Text);
+            cmd.Parameters.AddWithValue("@pass", hashedPassword);
+        }
+
+        private void parameterizeOptionalFields(SqlCommand cmd)
+        {
+            TextBox[] optionalFields = { companyTextBox, positionTextBox, phoneNumberTextBox, cityTextBox, stateTextBox, countryTextBox };
+            string[] optionalFieldParameters = { "@co", "@pos", "@phone", "@city", "@state", "@country" };
+            cmd.Parameters.AddWithValue("@co", companyTextBox.Text);
+            cmd.Parameters.AddWithValue("@pos", positionTextBox.Text);
+            cmd.Parameters.AddWithValue("@phone", phoneNumberTextBox.Text);
+            cmd.Parameters.AddWithValue("@city", cityTextBox.Text);
+            cmd.Parameters.AddWithValue("@state", stateTextBox.Text);
+            cmd.Parameters.AddWithValue("@country", countryTextBox.Text);
         }
 
         private void ShowEmptyRequiredFieldsMessage()
@@ -85,6 +141,11 @@ namespace Manufacturing_Challenge
         private void ShowAccountAlreadyExistsMessage()
         {
             signupFailedMessage.Text = "There's already an account associated with this Email.";
+        }
+
+        private void ShowSignupErrorMessage()
+        {
+            signupFailedMessage.Text = "Something went wrong while creating your account. Try again in a minute.";
         }
     }
 }
