@@ -50,7 +50,7 @@ namespace Manufacturing_Challenge.MemberPages
             da.Fill(dt);
             Random rng = new Random();
             var tableRow = dt.Rows[rng.Next(0, dt.Rows.Count)];
-            lblScenarioText.Text = tableRow.Field<string>("PromptText");
+            scenarioTextLabel.Text = tableRow.Field<string>("PromptText");
             scenarioId = (int)tableRow.Field<Int64>("id");
             conn.Close();
         }
@@ -64,15 +64,15 @@ namespace Manufacturing_Challenge.MemberPages
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(dt);
 
-            rblSolutions.DataSource = dt;
-            rblSolutions.DataTextField = "Text";
-            rblSolutions.DataValueField = "ID";
-            rblSolutions.DataBind();
+            solutionsRbl.DataSource = dt;
+            solutionsRbl.DataTextField = "Text";
+            solutionsRbl.DataValueField = "ID";
+            solutionsRbl.DataBind();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string answer = rblSolutions.SelectedValue;
+            string answer = solutionsRbl.SelectedValue;
             if (answer == "")
             {
                 errorLabel.Text = "Make sure you choose a solution!";
@@ -81,26 +81,29 @@ namespace Manufacturing_Challenge.MemberPages
             else
             {
                 goBackButton.Visible = true;
-                btnSubmit.Visible = false;
+                submitButton.Visible = false;
                 errorLabel.Visible = false;
 
+                showResults();
                 updateAsset("Money", answer);
                 updateAsset("Products", answer);
                 updateAsset("Parts", answer);
                 updateAsset("Employees", answer);
                 updateAsset("Customers", answer);
-
-                //shows User stats
-                conn.Open();
-                string qry = "select * from [User] where ID = " + userId;
-                SqlCommand cmd = new SqlCommand(qry, conn);
-                showGridView(cmd);
             }
         }
+
+        private void showResults()
+        {
+            resultsLabel.Visible = true;
+            //get results from user
+            //label = results
+        }
+
         private void updateAsset(string field, string answer)
         {
             int newTotal = getCurrentAsset(field) + getImpactAsset(field, answer);
-            lblScenarioText.Text = newTotal.ToString();
+            scenarioTextLabel.Text = newTotal.ToString();
             conn.Open();
             string qry = "Update [User] set [Assets" + field + "] = " + newTotal.ToString() + " where (ID = " + userId + ")";
             SqlCommand cmd = new SqlCommand(qry, conn);
@@ -152,15 +155,6 @@ namespace Manufacturing_Challenge.MemberPages
             //if station = ""
             //next station = ""
             //We should use numbers instead of station names so that we can simply add 1 to update next station.
-        }
-
-        public void showGridView(SqlCommand cmd)
-        {
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            gvDisplay.DataSource = dt;
-            gvDisplay.DataBind();
         }
     }
 }

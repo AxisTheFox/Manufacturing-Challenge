@@ -13,31 +13,31 @@ namespace Manufacturing_Challenge.MemberPages {
     public partial class Scenario {
         
         /// <summary>
-        /// lblScenarioText control.
+        /// scenarioTextLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblScenarioText;
+        protected global::System.Web.UI.WebControls.Label scenarioTextLabel;
         
         /// <summary>
-        /// rblSolutions control.
+        /// solutionsRbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rblSolutions;
+        protected global::System.Web.UI.WebControls.RadioButtonList solutionsRbl;
         
         /// <summary>
-        /// btnSubmit control.
+        /// submitButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.Button submitButton;
         
         /// <summary>
         /// errorLabel control.
@@ -49,13 +49,13 @@ namespace Manufacturing_Challenge.MemberPages {
         protected global::System.Web.UI.WebControls.Label errorLabel;
         
         /// <summary>
-        /// gvDisplay control.
+        /// resultsLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvDisplay;
+        protected global::System.Web.UI.WebControls.Label resultsLabel;
         
         /// <summary>
         /// goBackButton control.
