@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -18,22 +20,20 @@ namespace Manufacturing_Challenge
         protected void signupButton_Click(object sender, EventArgs e)
         {
             if (NoEmptyFieldsExist())
-            {
                 AttemptSignup();
-            }
             else
-            {
                 ShowEmptyFieldsMessage();
-            }
         }
 
-        private Boolean NoEmptyFieldsExist()
+        private bool NoEmptyFieldsExist()
         {
             return emailTextBox.Text != "" && firstNameTextBox.Text != "" && lastNameTextBox.Text != "" && passwordTextBox.Text != "" && confirmPasswordTextBox.Text != "";
         }
 
         private void AttemptSignup()
         {
+            if (AccountWithEmailAlreadyExists())
+                ShowAccountAlreadyExistsMessage();
             VerifyPasswordFieldsMatch();
             SubmitUserInformationToDatabase();
         }
@@ -41,14 +41,23 @@ namespace Manufacturing_Challenge
         private void VerifyPasswordFieldsMatch()
         {
             if (!PasswordFieldsMatch())
-            {
                 ShowPasswordMismatchMessage();
-            }
         }
 
         private bool PasswordFieldsMatch()
         {
             return passwordTextBox.Text.Equals(confirmPasswordTextBox.Text);
+        }
+
+        private bool AccountWithEmailAlreadyExists()
+        {
+            return EmailExistsInDatabase();
+        }
+
+        private bool EmailExistsInDatabase()
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
+            // TODO: check database for emails that match the email input by the user.
         }
 
         private void SubmitUserInformationToDatabase()
@@ -64,6 +73,11 @@ namespace Manufacturing_Challenge
         private void ShowPasswordMismatchMessage()
         {
             signupFailedMessage.Text = "The password and confirmation password you entered do not match.";
+        }
+
+        private void ShowAccountAlreadyExistsMessage()
+        {
+            signupFailedMessage.Text = "There's already an account associated with this Email.";
         }
     }
 }
