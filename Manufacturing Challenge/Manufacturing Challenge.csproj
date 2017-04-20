@@ -108,6 +108,7 @@
     <Content Include="AdminPages\DeleteScenario.aspx" />
     <Content Include="AdminPages\LookAtUsers.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\Infor Logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="MemberPages\Play.aspx" />
     <Content Include="MemberPages\Scenario.aspx" />
