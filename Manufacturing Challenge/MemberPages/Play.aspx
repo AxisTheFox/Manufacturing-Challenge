@@ -7,19 +7,19 @@
     <asp:Panel ID="Panel1" runat="server">
         <asp:Table ID="Table1" runat="server">
             <asp:TableRow>
-                <asp:TableCell><img src="/station0.png"/></asp:TableCell>
-                <asp:TableCell><img src="/station1.png"/></asp:TableCell>
-                <asp:TableCell><img src="/station2.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station0.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station1.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station2.png"/></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell><img src="/station7.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station7.png"/></asp:TableCell>
                 <asp:TableCell></asp:TableCell>
-                <asp:TableCell><img src="/station3.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station3.png"/></asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
-                <asp:TableCell><img src="/station6.png"/></asp:TableCell>
-                <asp:TableCell><img src="/station5.png"/></asp:TableCell>
-                <asp:TableCell><img src="/station4.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station6.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station5.png"/></asp:TableCell>
+                <asp:TableCell><img src="/images/station4.png"/></asp:TableCell>
             </asp:TableRow>
         </asp:Table>
     </asp:Panel>

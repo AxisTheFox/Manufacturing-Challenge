@@ -26,7 +26,7 @@ namespace Manufacturing_Challenge.MemberPages
                 userStation = getStation(userId);
                 if (!IsPostBack)
                 {
-                    
+
                 }
             }
             else
@@ -52,11 +52,6 @@ namespace Manufacturing_Challenge.MemberPages
         }
 
         protected void btnAnswerScenario_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Scenario.aspx");
-        }
-
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Scenario.aspx");
         }
