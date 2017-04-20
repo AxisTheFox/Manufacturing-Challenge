@@ -58,6 +58,7 @@ namespace Manufacturing_Challenge
         {
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
             // TODO: check database for emails that match the email input by the user.
+            return false;
         }
 
         private void SubmitUserInformationToDatabase()

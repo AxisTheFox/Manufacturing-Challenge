@@ -103,7 +103,6 @@ namespace Manufacturing_Challenge.MemberPages
         private void updateAsset(string field, string answer)
         {
             int newTotal = getCurrentAsset(field) + getImpactAsset(field, answer);
-            scenarioTextLabel.Text = newTotal.ToString();
             conn.Open();
             string qry = "Update [User] set [Assets" + field + "] = " + newTotal.ToString() + " where (ID = " + userId + ")";
             SqlCommand cmd = new SqlCommand(qry, conn);
@@ -150,11 +149,12 @@ namespace Manufacturing_Challenge.MemberPages
 
         public void updateStation()
         {
-            //int nextStation = station + 1 % 8;
-            //get current station from user
-            //if station = ""
-            //next station = ""
-            //We should use numbers instead of station names so that we can simply add 1 to update next station.
+            int nextStation = (station + 1) % 8;
+            conn.Open();
+            string qry = "Update [User] set [currentStation] = " + nextStation + " where (ID = " + userId + ")";
+            SqlCommand cmd = new SqlCommand(qry, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

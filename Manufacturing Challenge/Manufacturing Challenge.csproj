@@ -94,6 +94,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="station0.png" />
+    <Content Include="station1.png" />
+    <Content Include="station2.png" />
+    <Content Include="station3.png" />
+    <Content Include="station4.png" />
+    <Content Include="station5.png" />
+    <Content Include="station6.png" />
+    <Content Include="station7.png" />
     <Content Include="About.aspx" />
     <Content Include="AdminPages\AddScenario.aspx" />
     <Content Include="AdminPages\Admin.aspx" />

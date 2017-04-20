@@ -26,8 +26,7 @@ namespace Manufacturing_Challenge.MemberPages
                 userStation = getStation(userId);
                 if (!IsPostBack)
                 {
-                    //Do stuff? Like show board maybe?
-                    showAssets();
+                    
                 }
             }
             else
@@ -52,19 +51,12 @@ namespace Manufacturing_Challenge.MemberPages
             return station;
         }
 
-        private void showAssets()
+        protected void btnAnswerScenario_Click(object sender, EventArgs e)
         {
-            /*conn.Open();
-            string qry = "select assetsMoney, assetsProducts, assetsParts, assetsEmployees, assetsCustomers from [User] where ID = " + userId;
-            SqlCommand cmd = new SqlCommand(qry, conn);
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            assetsGridView.DataSource = dt;
-            assetsGridView.DataBind();*/
+            Response.Redirect("Scenario.aspx");
         }
 
-        protected void btnAnswerScenario_Click(object sender, EventArgs e)
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Scenario.aspx");
         }
