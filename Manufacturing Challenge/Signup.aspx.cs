@@ -81,8 +81,9 @@ namespace Manufacturing_Challenge
         private void SubmitUserInformationToDatabase()
         {
             string hashedPassword = hashUserPassword();
+
             SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["gamedb"].ConnectionString);
-            string qry = "INSERT INTO [User] (Email, FirstName, LastName, Password, Company, Position, PhoneNumber, City, State, Country) VALUES (@email, @fname, @lname, @pass, @co, @pos, @phone, @city, @state, @country)";
+            string qry = "INSERT INTO [User] (Email, FirstName, LastName, Password, Company, Position, PhoneNumber, City, State, Country, AssetsMoney, AssetsProducts, AssetsParts, AssetsEmployees, AssetsCustomers, CurrentStation, Admin) VALUES (@email, @fname, @lname, @pass, @co, @pos, @phone, @city, @state, @country, 0, 0, 0, 0, 0, 0, 0)";
             SqlCommand cmd = new SqlCommand(qry, conn);
             addParametersToSqlCommand(hashedPassword, cmd);
             conn.Open();

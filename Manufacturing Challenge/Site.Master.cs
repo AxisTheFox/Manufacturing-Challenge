@@ -37,10 +37,14 @@ namespace Manufacturing_Challenge
             SqlCommand cmd = new SqlCommand(qry, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
             Boolean admin = false;
-            while (rdr.Read())
+            try
             {
-                admin = (Boolean)rdr["Admin"];
+                while (rdr.Read())
+                {
+                    admin = (Boolean)rdr["Admin"];
+                }
             }
+            catch { }
             rdr.Close();
             conn.Close();
             return admin;
