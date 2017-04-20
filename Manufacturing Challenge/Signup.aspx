@@ -21,6 +21,24 @@
     
     <p>*Confirm password:<br />
         <asp:TextBox ID="confirmPasswordTextBox" runat="server" TextMode="Password"></asp:TextBox></p>
+
+    <p>Company:<br />
+        <asp:TextBox ID="companyTextBox" runat="server"></asp:TextBox></p>
+    
+    <p>Position:<br />
+        <asp:TextBox ID="positionTextBox" runat="server"></asp:TextBox></p>
+
+    <p>Phone Number:<br />
+        <asp:TextBox ID="phoneNumberTextBox" runat="server"></asp:TextBox></p>
+
+    <p>City:<br />
+        <asp:TextBox ID="cityTextBox" runat="server"></asp:TextBox></p>
+
+    <p>State:<br />
+        <asp:TextBox ID="stateTextBox" runat="server"></asp:TextBox></p>
+
+    <p>Country:<br />
+        <asp:TextBox ID="countryTextBox" runat="server"></asp:TextBox></p>
     
     <p>
         <asp:Button ID="signupButton" runat="server" Text="Sign Up!" OnClick="signupButton_Click" /></p>

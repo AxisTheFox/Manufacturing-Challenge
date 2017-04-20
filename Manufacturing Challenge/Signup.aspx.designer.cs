@@ -58,6 +58,60 @@ namespace Manufacturing_Challenge {
         protected global::System.Web.UI.WebControls.TextBox confirmPasswordTextBox;
         
         /// <summary>
+        /// companyTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox companyTextBox;
+        
+        /// <summary>
+        /// positionTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox positionTextBox;
+        
+        /// <summary>
+        /// phoneNumberTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox phoneNumberTextBox;
+        
+        /// <summary>
+        /// cityTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox cityTextBox;
+        
+        /// <summary>
+        /// stateTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox stateTextBox;
+        
+        /// <summary>
+        /// countryTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox countryTextBox;
+        
+        /// <summary>
         /// signupButton control.
         /// </summary>
         /// <remarks>
