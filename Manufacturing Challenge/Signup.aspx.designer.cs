@@ -13,6 +13,15 @@ namespace Manufacturing_Challenge {
     public partial class Signup {
         
         /// <summary>
+        /// signupFailedMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label signupFailedMessage;
+        
+        /// <summary>
         /// emailTextBox control.
         /// </summary>
         /// <remarks>
@@ -119,14 +128,5 @@ namespace Manufacturing_Challenge {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button signupButton;
-        
-        /// <summary>
-        /// signupFailedMessage control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label signupFailedMessage;
     }
 }

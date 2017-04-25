@@ -5,9 +5,9 @@
     
     <h2>Sign up</h2>
 
-    <i>* Indicates a required field.</i>
+    <i>* Indicates a required field. </i>
     
-    <p>*Email:<br />
+        <asp:Label ID="signupFailedMessage" runat="server" ForeColor="Red"></asp:Label>&nbsp;<p>*Email:<br />
         <asp:TextBox ID="emailTextBox" runat="server" TextMode="Email"></asp:TextBox></p>
     
     <p>*First name:<br />
@@ -41,9 +41,5 @@
         <asp:TextBox ID="countryTextBox" runat="server"></asp:TextBox></p>
     
     <p>
-        <asp:Button ID="signupButton" runat="server" Text="Sign Up!" OnClick="signupButton_Click" /></p>
-    
-    <p>
-        <asp:Label ID="signupFailedMessage" runat="server" ForeColor="Red"></asp:Label></p>
-
+        <asp:Button ID="signupButton" runat="server" Text="Sign Up!" OnClick="signupButton_Click" />&nbsp;</p>
 </asp:Content>

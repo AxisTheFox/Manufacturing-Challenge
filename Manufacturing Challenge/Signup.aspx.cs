@@ -90,7 +90,7 @@ namespace Manufacturing_Challenge
             int result = cmd.ExecuteNonQuery();
             conn.Close();
             if (result != 1)
-                ShowSignupErrorMessage();
+                ShowSignupErrorMessage(); //This doesn't work. If there is an error, it will break at .ExecuteNonQuery()
         }
 
         private string hashUserPassword()
