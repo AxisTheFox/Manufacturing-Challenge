@@ -87,10 +87,17 @@ namespace Manufacturing_Challenge
             SqlCommand cmd = new SqlCommand(qry, conn);
             addParametersToSqlCommand(hashedPassword, cmd);
             conn.Open();
-            int result = cmd.ExecuteNonQuery();
+            int result = 0;
+            try
+            {
+                result = cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                if (result != 1)
+                    ShowSignupErrorMessage();
+            }
             conn.Close();
-            if (result != 1)
-                ShowSignupErrorMessage(); //This doesn't work. If there is an error, it will break at .ExecuteNonQuery()
         }
 
         private string hashUserPassword()
