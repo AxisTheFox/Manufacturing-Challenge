@@ -11,5 +11,7 @@
     <br />
     <asp:Label ID="resultsLabel" runat="server" Text="Results Here!" Visible="False"></asp:Label>
     <br />
+    <div id="assetChanges" runat="server"></div>
+    <br />
     <asp:Button ID="goBackButton" runat="server" Text="Go back to board" OnClick="goBackButton_Click" Visible="False" />
 </asp:Content>

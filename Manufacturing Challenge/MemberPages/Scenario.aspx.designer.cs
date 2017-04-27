@@ -58,6 +58,15 @@ namespace Manufacturing_Challenge.MemberPages {
         protected global::System.Web.UI.WebControls.Label resultsLabel;
         
         /// <summary>
+        /// assetChanges control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl assetChanges;
+        
+        /// <summary>
         /// goBackButton control.
         /// </summary>
         /// <remarks>

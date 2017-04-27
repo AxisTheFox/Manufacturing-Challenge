@@ -102,12 +102,14 @@ namespace Manufacturing_Challenge.MemberPages
 
         private void updateAsset(string field, string answer)
         {
-            int newTotal = getCurrentAsset(field) + getImpactAsset(field, answer);
+            int assetImpact = getImpactAsset(field, answer);
+            int newTotal = getCurrentAsset(field) + assetImpact;
             conn.Open();
             string qry = "Update [User] set [Assets" + field + "] = " + newTotal.ToString() + " where (ID = " + userId + ")";
             SqlCommand cmd = new SqlCommand(qry, conn);
             cmd.ExecuteNonQuery();
             conn.Close();
+            assetChanges.InnerHtml += "<br />" + field + ": " + assetImpact;
         }
         private int getCurrentAsset(string field)
         {
