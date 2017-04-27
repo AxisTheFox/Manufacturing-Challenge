@@ -94,6 +94,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AdminPages\AddScenario.aspx" />
+    <Content Include="AdminPages\Admin.aspx" />
+    <Content Include="AdminPages\DeleteScenario.aspx" />
+    <Content Include="AdminPages\LookAtUsers.aspx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Images\Infor Logo.png" />
     <Content Include="Images\station0.png" />
     <Content Include="Images\station1.png" />
     <Content Include="Images\station2.png" />
@@ -102,13 +109,6 @@
     <Content Include="Images\station5.png" />
     <Content Include="Images\station6.png" />
     <Content Include="Images\station7.png" />
-    <Content Include="About.aspx" />
-    <Content Include="AdminPages\AddScenario.aspx" />
-    <Content Include="AdminPages\Admin.aspx" />
-    <Content Include="AdminPages\DeleteScenario.aspx" />
-    <Content Include="AdminPages\LookAtUsers.aspx" />
-    <Content Include="Default.aspx" />
-    <Content Include="Images\Infor Logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="MemberPages\Play.aspx" />
     <Content Include="MemberPages\Scenario.aspx" />

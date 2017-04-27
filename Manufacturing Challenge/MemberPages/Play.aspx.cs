@@ -24,6 +24,7 @@ namespace Manufacturing_Challenge.MemberPages
                 userFirstName = Session["userFirstName"].ToString();
                 userId = (int)Session["userId"];
                 userStation = getStation(userId);
+                showCurrentStationToUser(userStation);
                 if (!IsPostBack)
                 {
 
@@ -49,6 +50,14 @@ namespace Manufacturing_Challenge.MemberPages
             }
             conn.Close();
             return station;
+        }
+
+        private void showCurrentStationToUser(int currentStationNumber)
+        {
+            string stationName = "station" + currentStationNumber;
+            TableCell stationImage = (TableCell)Table1.FindControl(stationName);
+            stationImage.BorderStyle = BorderStyle.Solid;
+            stationImage.BorderColor = System.Drawing.Color.Blue;
         }
 
         protected void btnAnswerScenario_Click(object sender, EventArgs e)
