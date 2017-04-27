@@ -57,7 +57,7 @@ namespace Manufacturing_Challenge.MemberPages
             string stationName = "station" + currentStationNumber;
             TableCell stationImage = (TableCell)Table1.FindControl(stationName);
             stationImage.BorderStyle = BorderStyle.Solid;
-            stationImage.BorderColor = System.Drawing.Color.Blue;
+            stationImage.BorderColor = System.Drawing.Color.Black;
         }
 
         protected void btnAnswerScenario_Click(object sender, EventArgs e)
