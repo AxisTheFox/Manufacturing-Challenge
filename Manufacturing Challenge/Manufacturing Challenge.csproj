@@ -118,6 +118,10 @@
     </Content>
     <Content Include="Signup.aspx" />
     <Content Include="Site.Master" />
+    <None Include="Properties\PublishProfiles\manufacturing-challenge.com - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\manufacturing-challenge.com - Web Deploy.pubxml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,7 +132,9 @@
   <ItemGroup>
     <Content Include="Styles\LoginStyle.css" />
     <Content Include="Styles\Master.css" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -210,6 +216,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
